@@ -35,47 +35,9 @@ void gateway_stop(void) {
 }
 
 void gateway_send(void *data, uint size) {
-	
-}
+	uint32_t header = PACKED_DATA; 	
 
+	gw_queue_main_send((uint8_t *)&header, (sizeof (uint32_t)));
+	gw_queue_main_send((uint8_t *)data, size);
 
-int test_gateway() {
-	return 1;
-//    stdio_init_all(); // To be able to use printf
-//	
-//	bool success = false;
-//	char *error_str = "ok";
-//					  
-//	Modem *modem = modem_start(
-//			MODEM_APN,
-//			UART_PORT,
-//			UART_PIN_TX,
-//			UART_PIN_RX,
-//			MODEM_PIN_PWR
-//	);
-//
-//	if (modem == NULL) {
-//		error_str = "modem_start returned NULL";
-//		goto LOOP_BEGIN;
-//	}
-//
-//
-//	success = modem_cn_activate(modem, true)) printf("Network activated\n");
-//
-//	success = true;
-//LOOP_BEGIN:
-//	if (!success)
-//		for (;;)
-//			printf("Error: %s\n", error_str); 
-//			sleep_ms(3000);
-//		}
-//
-//	for(;;) {
-//
-//		printf("Modem init success!\n"); 
-//		sleep_ms(3000);
-//	}
-//
-//    
-//    return 0;
 }

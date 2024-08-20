@@ -3,6 +3,7 @@
 
 typedef enum sensor_type {
 	TEST,
+	SHT30,
 	SENSOR_TYPE_MAX // Keep at end
 } SENSOR_TYPE_T;
 

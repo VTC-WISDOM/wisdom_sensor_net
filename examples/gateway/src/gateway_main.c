@@ -31,11 +31,16 @@
 int main() {
     stdio_init_all(); // To be able to use printf
 	
-	//while (!tud_cdc_connected()) { sleep_ms(100); };
+	// Wait for USB serial connection
+	while (!tud_cdc_connected()) { sleep_ms(100); };
+
 	gateway_init();
 
-	int i = 1;
+	uint32_t i = 69;
+
 	gateway_start();
+	gateway_send(&i, 4);
+
 	for(;;) {
 		sleep_ms(5000);
 	}

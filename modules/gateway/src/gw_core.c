@@ -111,8 +111,11 @@ LOOP_BEGIN:
 		// Errors at this point are unrecoverable	
 		// so we send our error to the main process
 		// and then go into a dead loop.
+		printf("Error: %s\n", error);
 
 	}
+
+	printf("Heading into main loop\n");
 
 	// Main loop
 	for (;;) {
@@ -164,11 +167,7 @@ LOOP_BEGIN:
 			sim7080g_tcp_send(_gateway, strlen(message) + (sizeof (uint16_t) * 2), (uint8_t *)packet);
 			printf("sent\n");
 		}
-		printf("end\n");
 
-
-		printf("cn available: %s\n",
-				_modem_cn_available() ? "true" : "false");
 		printf("state: %u\n", _modem_state);
 
 LOOP_CONTINUE:
@@ -189,10 +188,16 @@ static int _message_queue_process(void) {
 	uint32_t buffer = 0;
 	uint16_t received = 0;
 	uint16_t new_received;
+
+	// Read until return is 0 or < 0 (indicating error)
 	while (new_received = gw_queue_gw_recv((uint8_t *)&buffer, (sizeof buffer))) {
+
+		printf("received: %u\n", new_received);
+
 		if (new_received < 0) gw_core_panic(GW_CORE_FAILURE);
 
 		received += new_received;
+		// dispatch each uint32_t read to message buffer
 		_dispatch_message_buffer(buffer);
 	}
 	
@@ -203,6 +208,9 @@ static void _dispatch_message_buffer(uint32_t buffer) {
 	static bool new_message = true;
 	static uint32_t message_type;
 
+	printf("nm: %s\n", new_message ? "true" : "false");
+	printf("buffer: %u\n", buffer);
+
 	if (new_message) {
 		message_type = buffer;
 		new_message = false;
@@ -210,12 +218,14 @@ static void _dispatch_message_buffer(uint32_t buffer) {
 		uint rval = 0;
 		switch(message_type) {
 		case GATEWAY_COMMAND:
+			rval = _build_command(buffer);
 			// Unrecoverable error if rval < 0
-			rval == _build_command(buffer);
 			if (rval < 0) gw_core_panic(GW_CORE_FAILURE);
 			if (rval == COMMAND_DISPATCHED) new_message = true;
 			break;
 		case PACKED_DATA:
+			printf("data: %u\n", buffer);
+			new_message = true;
 			break;
 		}
 	}
@@ -227,63 +237,61 @@ static int _build_command(uint32_t buffer) {
 
 	if (new_command) {
 		command_type = buffer;
+		printf("ct: %u\n", command_type);
 		new_command = false;
 	}
 
 	uint rval = COMMAND_UNRECOGNIZED;
-	bool success = false;
+
 	switch (command_type) {
 	case GATEWAY_START:
     case GATEWAY_STOP:
-		if (_command_buffer_push(&buffer, (sizeof buffer)))
+		if (_command_buffer_push(&buffer, (sizeof buffer))) {
+			printf("cb pushed\n");
 			rval = COMMAND_DISPATCHED;
+		}
 		else rval = COMMAND_BUFFER_FULL;
 		break;
 	}
 
-	if (rval == COMMAND_DISPATCHED) new_command = true;
+	// TODO: Need some better way to deal with full command buffer. How to reissue command or tell
+	// main core that command failed?
+	if (rval == COMMAND_DISPATCHED || rval == COMMAND_BUFFER_FULL) new_command = true;
 
 	return rval;
 }
 
 static bool _command_buffer_push(void *command, uint size) {
-	if (size > (_buffer_command_end - _buffer_command_p)) return false;	
+	printf("cbr: %u | size: %u\n", cbuffer_remaining(_modem_buffer_command), size);
+	if (size > cbuffer_remaining(_modem_buffer_command)) return false;	
 
-	uint8_t *cp = (uint8_t *)command;
-	for (int i = 0; i < size; i++) {
-		*_buffer_command_p = cp[i];
-		_buffer_command_p++;
-	}
+	cbuffer_push(_modem_buffer_command, command, size);
 
 	return true;
 }
 
 static void _command_buffer_execute(void) {
-	uint8_t *bp = _modem_buffer_command;
-	bool new_command = true;
-	uint32_t command_type;
-	while (bp != _buffer_command_p) {
+	static bool new_command = true;
+	static uint32_t command_type;
+
+	while (!cbuffer_empty(_modem_buffer_command)) {
 		if (new_command) {
-			command_type = *(uint32_t *)bp;
-			bp += sizeof (uint32_t);
+			cbuffer_pop(_modem_buffer_command, &command_type, (sizeof command_type));
 			new_command = false;
 		}
 
-		bool success = false;
 		switch (command_type) {
 		case GATEWAY_START:
 			_start_command_issued = true;
 			new_command = true;
 			break;
 		case GATEWAY_STOP:
+			printf("here stopping\n");
 			if (sim7080g_power_down(_gateway)) _modem_state = MODEM_STOPPED;
 			new_command = true;
 			break;	
 		}
 	}
-
-	// Reset global buffer pointer
-	_buffer_command_p = _modem_buffer_command;
 }
 
 //void modem_test(void) {

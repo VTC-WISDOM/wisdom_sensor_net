@@ -1,0 +1,28 @@
+#ifndef PCF8523_DEFINITIONS_H
+#define PCF8523_DEFINITIONS_H
+
+typedef unsigned uint;
+
+// REGISTERS
+#define PCF8523_REG_CONTROL_1	  (0x00)
+#define PCF8523_REG_CONTROL_2	  (0x01)
+#define PCF8523_REG_CONTROL_3	  (0x02)
+
+#define PCF8523_REG_SECONDS		  (0x03)
+#define PCF8523_REG_MINUTES		  (0x04)
+#define PCF8523_REG_HOURS		  (0x05)
+#define PCF8523_REG_DAYS		  (0x06)
+#define PCF8523_REG_WEEKDAYS	  (0x07)
+#define PCF8523_REG_MONTHS		  (0x08)
+#define PCF8523_REG_YEARS		  (0x09)
+
+#define PCF8523_REG_MINUTE_ALARM  (0x0A)
+#define PCF8523_REG_HOUR_ALARM	  (0x0B)
+#define PCF8523_REG_DAY_ALARM	  (0x0C)
+#define PCF8523_REG_WEEKDAY_ALARM (0x0D)
+
+#define PCF8523_REG_OFFSET		  (0x0E)
+
+// TODO: Add timer constants
+
+#endif // PCF8523_DEFINITIONS_H

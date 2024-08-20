@@ -9,7 +9,7 @@ typedef struct _test_sensor {
 } test_sensor_t;
 
 test_sensor_t * test_sensor_create(void);
-void *test_sensor_destroy(test_sensor_t *sensor);
+void * test_sensor_destroy(test_sensor_t *sensor);
 
 int test_sensor_pack(
 		struct _sensor_generic *sensor, 

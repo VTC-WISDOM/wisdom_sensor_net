@@ -16,6 +16,8 @@ cbuffer_t * cbuffer_create(size_t size) {
 	buffer->base_p = buffer->buff;
 	buffer->write_p = buffer->buff;
 	buffer->write_index = 0;
+
+	return buffer;
 }
 
 void cbuffer_destroy(cbuffer_t *buffer) {
