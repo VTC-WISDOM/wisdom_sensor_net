@@ -27,5 +27,5 @@ list(APPEND definitions
 )
 
 # Only one of these should be enabled
-set(stdio_uart_enable 0)
-set(stdio_usb_enable 1)
+set(stdio_uart_enable 1)
+set(stdio_usb_enable 0)
