@@ -3,9 +3,7 @@
 //	Copyright (C) 2024 
 //	Evan Morse
 //	Amelia Vlahogiannis
-//	Noelle Steil
-//	Jordan Allen
-//	Sam Colwell
+//	Sam Cowan
 //	Rachel Cleminson
 
 //	This program is free software: you can redistribute it and/or modify
@@ -26,32 +24,22 @@
 #include "hardware/i2c.h"
 #include "tusb.h"
 
-// OPTIONAL INCLUDES
-// Uncomment depending on libraries used
-
-// RFM69 library
-//#include "rfm69_pico.h" 
-
-// SD card library
-//#include "sd_config.h"
-
 int main() {
     stdio_init_all(); // To be able to use printf
 
 	i2c_init(i2c0, 100 * 1000);
 
-	gpio_set_function(0, GPIO_FUNC_I2C);
-	gpio_set_function(1, GPIO_FUNC_I2C);
-
-	gpio_set_function(3, GPIO_FUNC_SIO); 
-	gpio_pull_down(3);
-	gpio_put(3, 0);
+	gpio_set_function(0, GPIO_FUNC_I2C);//pin 1 SDA
+	gpio_set_function(1, GPIO_FUNC_I2C); //pin 2 SCL
+	//gpio_set_function(3, GPIO_FUNC_SIO); 
+	//gpio_pull_down(3); 
+	//gpio_put(3, 0); 
 
 	gpio_set_function(2, GPIO_FUNC_SIO); // reset pin, low to clear, keep high otherwise
-	gpio_pull_up(2);
-	gpio_put(2, 0);
-	sleep_ms(1000);
-	gpio_put(2, 1);
+	gpio_pull_up(2); //internal pullup on reset pin
+	gpio_put(2, 0); //initial count reset
+	sleep_ms(1000); 
+	gpio_put(2, 1); //drive reset pin high, to note lose count
 
 	gpio_pull_up(0); //I2C line pull ups
 	gpio_pull_up(1);
