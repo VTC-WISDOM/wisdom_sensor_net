@@ -73,6 +73,8 @@ int main() {
 	if(!status) printf("wrote to eeprom\n");
 	else printf("failed write!\n");
 
+	sleep_ms(100);
+
 	status = cat24_read_selective_byte(&eeprom, page, address, &rxbuf);
 	if(!status) printf("wrote to eeprom\n");
 	else printf("failed read!\n");

@@ -32,8 +32,11 @@ bool cat24_write_byte(
 	_payload[2] = _data;
 
 	printf("i2c_write_blocking(eeprom->i2c, %x, %x%x%x, 3, 0)\n", _device_address>>1, _payload[0], _payload[1], _payload[2]);
+	
 	int _status = i2c_write_blocking(_eeprom->i2c, _device_address>>1, (void *)&_payload, 3, 0);
+	
 	printf("status: %i\n", _status);
+	
 	if(_status != PICO_ERROR_GENERIC) return 0;
 	else return 1;
 }
@@ -75,7 +78,7 @@ bool cat24_read_selective_byte(
 	printf("reading\n");
 	printf("i2c_write_blocking(eeprom->i2c, %x, %x%x, 2, 1)\n", _device_address>>1, _payload[0], _payload[1]);
 	
-	int _status = i2c_write_blocking(_eeprom->i2c, _device_address>>1, (void *)&_payload, 2, 1);
+	int _status = i2c_write_blocking(_eeprom->i2c, _device_address>>1, (void *)&_payload, 2, 0);
 	
 	printf("wrote pointer status: %i\n", _status);
 
