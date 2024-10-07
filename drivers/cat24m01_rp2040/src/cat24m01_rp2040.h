@@ -1,3 +1,5 @@
+#include "hardware/i2c.h"
+
 
 typedef struct cat24m01_inst {
 	bool a1; //
