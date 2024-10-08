@@ -27,7 +27,7 @@ bool cat24_write_byte(
 	if(_page > 0x0F) _device_address |= 0x02;
 
 	uint8_t _payload[3];
-	_payload[0] = _page;
+	_payload[0] = _device_page;
 	_payload[1] = _address;
 	_payload[2] = _data;
 
@@ -84,13 +84,17 @@ bool cat24_read_selective_byte(
 
 	//if(_status == PICO_ERROR_GENERIC) return 1;
 	
-	_status = i2c_read_blocking(_eeprom->i2c, _device_address>>1, &_buf, 1, 0);
-	
+	do{
+		_status = i2c_read_blocking(_eeprom->i2c, _device_address>>1, &_buf, 1, 0);
+	}while(_status == PICO_ERROR_GENERIC);
+	printf("read %x from eeprom\n", _buf);
+
 	printf("read status: %i\n", _status);
 	if(_status == PICO_ERROR_GENERIC) return 1;
 
-	_result = &_buf;
+	*_result = _buf;
 
+	return 0;
 }
 
 //read a single byte from a selected page and address

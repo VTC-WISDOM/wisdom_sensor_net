@@ -57,10 +57,10 @@ int main() {
 	gpio_set_pulls(PIN_SCL, 1, 0);
 	gpio_set_pulls(PIN_SDA, 1, 0);
 
-	uint8_t data = 0x66;
+	uint8_t data = 0x45;
 	uint16_t page = 420;
 	uint8_t address = 69;
-	uint8_t rxbuf = 0x00;
+	uint8_t rxbuf = 0xaa;
 
 
 
@@ -76,9 +76,12 @@ int main() {
 	sleep_ms(100);
 
 	status = cat24_read_selective_byte(&eeprom, page, address, &rxbuf);
-	if(!status) printf("wrote to eeprom\n");
+	if(!status) printf("read byte from eeprom\n");
 	else printf("failed read!\n");
-	printf("read byte %i from page %i: %x\n", address, page, rxbuf);
+
+	sleep_ms(100);
+
+	printf("read byte %i from page %i: 0x%x\n", address, page, rxbuf);
 
 
 	return 0;
