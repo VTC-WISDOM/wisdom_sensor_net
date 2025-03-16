@@ -1,0 +1,534 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      The target system is: PICO -  - cortex-m0plus
+      The host system is: Linux - 6.13.6_1 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/arm-none-eabi-gcc 
+      Build flags: -mcpu=cortex-m0plus;-mthumb
+      Id flags:  
+      
+      The output was:
+      1
+      /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/ld: /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o): in function `exit':
+      /builddir/newlib-3.1.0.20181231/build-newlib/arm-none-eabi/thumb/v6-m/nofp/newlib/libc/stdlib/../../../../../../../../newlib/libc/stdlib/exit.c:64: undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/arm-none-eabi-gcc 
+      Build flags: -mcpu=cortex-m0plus;-mthumb
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/3.30.1/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/arm-none-eabi-g++ 
+      Build flags: -mcpu=cortex-m0plus;-mthumb
+      Id flags:  
+      
+      The output was:
+      1
+      /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/ld: /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o): in function `exit':
+      /builddir/newlib-3.1.0.20181231/build-newlib/arm-none-eabi/thumb/v6-m/nofp/newlib/libc/stdlib/../../../../../../../../newlib/libc/stdlib/exit.c:64: undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/arm-none-eabi-g++ 
+      Build flags: -mcpu=cortex-m0plus;-mthumb
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/3.30.1/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1192 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      arm-none-eabi-gcc (GCC) 9.3.0
+      Copyright (C) 2019 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf"
+      binary: "/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-mcpu=cortex-m0plus -mthumb"
+      CMAKE_C_FLAGS_DEBUG: "-Og -g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/amelia/pico/pico-sdk/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d91db/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_d91db.dir/build.make CMakeFiles/cmTC_d91db.dir/build
+        make[1]: Entering directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf'
+        Building C object CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj
+        /usr/bin/arm-none-eabi-gcc   -mcpu=cortex-m0plus -mthumb  -std=gnu11   -v -o CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-none-eabi-gcc
+        Target: arm-none-eabi
+        Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib
+        Thread model: single
+        gcc version 9.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu11' '-v' '-o' 'CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m'
+         /usr/lib/gcc/arm-none-eabi/9.3.0/cc1 -quiet -v -imultilib thumb/v6-m/nofp -D__USES_INITFINI__ /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -march=armv6s-m -auxbase-strip CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj -std=gnu11 -version -o /tmp/cc3qedtD.s
+        GNU C11 (GCC) version 9.3.0 (arm-none-eabi)
+        	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.19-GMP
+        
+        warning: GMP header version 6.2.0 differs from library version 6.3.0.
+        warning: MPFR header version 4.0.2 differs from library version 4.2.1.
+        warning: MPC header version 1.1.0 differs from library version 1.3.1.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/arm-none-eabi/usr/local/include"
+        ignoring duplicate directory "/usr/arm-none-eabi/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/arm-none-eabi/9.3.0/include
+         /usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed
+         /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include
+        End of search list.
+        GNU C11 (GCC) version 9.3.0 (arm-none-eabi)
+        	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.19-GMP
+        
+        warning: GMP header version 6.2.0 differs from library version 6.3.0.
+        warning: MPFR header version 4.0.2 differs from library version 4.2.1.
+        warning: MPC header version 1.1.0 differs from library version 1.3.1.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 0dbe903bfd2d614fd1db89221093437b
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu11' '-v' '-o' 'CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m'
+         /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/as -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj /tmp/cc3qedtD.s
+        GNU assembler version 2.32 (arm-none-eabi) using BFD version (GNU Binutils) 2.32
+        COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu11' '-v' '-o' 'CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m'
+        Linking C executable cmTC_d91db.elf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d91db.dir/link.txt --verbose=1
+        /usr/bin/arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb  -Wl,--build-id=none -nostdlib  -v CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj -o cmTC_d91db.elf
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-none-eabi-gcc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper
+        Target: arm-none-eabi
+        Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib
+        Thread model: single
+        gcc version 9.3.0 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d91db.elf' '-mfloat-abi=soft' '-march=armv6s-m'
+         /usr/lib/gcc/arm-none-eabi/9.3.0/collect2 -plugin /usr/lib/gcc/arm-none-eabi/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgkTyZj.res --sysroot=/usr/arm-none-eabi -X -o cmTC_d91db.elf -L/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0 -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib -L/usr/arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj
+        /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d91db.elf' '-mfloat-abi=soft' '-march=armv6s-m'
+        make[1]: Leaving directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/include]
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed]
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/include] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0/include]
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed]
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include] ==> [/usr/arm-none-eabi/include]
+        implicit include dirs: [/usr/lib/gcc/arm-none-eabi/9.3.0/include;/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed;/usr/arm-none-eabi/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d91db/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_d91db.dir/build.make CMakeFiles/cmTC_d91db.dir/build]
+        ignore line: [make[1]: Entering directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf']
+        ignore line: [Building C object CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/usr/bin/arm-none-eabi-gcc   -mcpu=cortex-m0plus -mthumb  -std=gnu11   -v -o CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-none-eabi-gcc]
+        ignore line: [Target: arm-none-eabi]
+        ignore line: [Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 9.3.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu11' '-v' '-o' 'CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/cc1 -quiet -v -imultilib thumb/v6-m/nofp -D__USES_INITFINI__ /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -march=armv6s-m -auxbase-strip CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj -std=gnu11 -version -o /tmp/cc3qedtD.s]
+        ignore line: [GNU C11 (GCC) version 9.3.0 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.19-GMP]
+        ignore line: []
+        ignore line: [warning: GMP header version 6.2.0 differs from library version 6.3.0.]
+        ignore line: [warning: MPFR header version 4.0.2 differs from library version 4.2.1.]
+        ignore line: [warning: MPC header version 1.1.0 differs from library version 1.3.1.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/arm-none-eabi/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/usr/arm-none-eabi/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/include]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C11 (GCC) version 9.3.0 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.19-GMP]
+        ignore line: []
+        ignore line: [warning: GMP header version 6.2.0 differs from library version 6.3.0.]
+        ignore line: [warning: MPFR header version 4.0.2 differs from library version 4.2.1.]
+        ignore line: [warning: MPC header version 1.1.0 differs from library version 1.3.1.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 0dbe903bfd2d614fd1db89221093437b]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu11' '-v' '-o' 'CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/as -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj /tmp/cc3qedtD.s]
+        ignore line: [GNU assembler version 2.32 (arm-none-eabi) using BFD version (GNU Binutils) 2.32]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu11' '-v' '-o' 'CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [Linking C executable cmTC_d91db.elf]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d91db.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb  -Wl --build-id=none -nostdlib  -v CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj -o cmTC_d91db.elf]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-none-eabi-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper]
+        ignore line: [Target: arm-none-eabi]
+        ignore line: [Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 9.3.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d91db.elf' '-mfloat-abi=soft' '-march=armv6s-m']
+        link line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/collect2 -plugin /usr/lib/gcc/arm-none-eabi/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgkTyZj.res --sysroot=/usr/arm-none-eabi -X -o cmTC_d91db.elf -L/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0 -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib -L/usr/arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj]
+          arg [/usr/lib/gcc/arm-none-eabi/9.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/arm-none-eabi/9.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccgkTyZj.res] ==> ignore
+          arg [--sysroot=/usr/arm-none-eabi] ==> ignore
+          arg [-X] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_d91db.elf] ==> ignore
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp]
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
+          arg [-L/usr/arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [/usr/arm-none-eabi/lib/thumb/v6-m/nofp]
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0]
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib]
+          arg [-L/usr/arm-none-eabi/lib] ==> dir [/usr/arm-none-eabi/lib]
+          arg [--build-id=none] ==> ignore
+          arg [CMakeFiles/cmTC_d91db.dir/CMakeCCompilerABI.c.obj] ==> ignore
+        ignore line: [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start]
+        ignore line: [ defaulting to 0000000000008000]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d91db.elf' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [make[1]: Leaving directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-6nR4Tf']
+        ignore line: []
+        ignore line: []
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp]
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [/usr/arm-none-eabi/lib/thumb/v6-m/nofp]
+        collapse library dir [/usr/arm-none-eabi/lib/thumb/v6-m/nofp] ==> [/usr/arm-none-eabi/lib/thumb/v6-m/nofp]
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0]
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib] ==> [/usr/arm-none-eabi/lib]
+        collapse library dir [/usr/arm-none-eabi/lib] ==> [/usr/arm-none-eabi/lib]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp;/usr/arm-none-eabi/lib/thumb/v6-m/nofp;/usr/lib/gcc/arm-none-eabi/9.3.0;/usr/arm-none-eabi/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N"
+      binary: "/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-mcpu=cortex-m0plus -mthumb"
+      CMAKE_CXX_FLAGS_DEBUG: "-Og -g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/amelia/pico/pico-sdk/cmake"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d2b3d/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_d2b3d.dir/build.make CMakeFiles/cmTC_d2b3d.dir/build
+        make[1]: Entering directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N'
+        Building CXX object CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj
+        /usr/bin/arm-none-eabi-g++   -mcpu=cortex-m0plus -mthumb  -std=gnu++17   -v -o CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-none-eabi-g++
+        Target: arm-none-eabi
+        Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib
+        Thread model: single
+        gcc version 9.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu++17' '-v' '-o' 'CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m'
+         /usr/lib/gcc/arm-none-eabi/9.3.0/cc1plus -quiet -v -imultilib thumb/v6-m/nofp -D__USES_INITFINI__ /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -march=armv6s-m -auxbase-strip CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj -std=gnu++17 -version -o /tmp/ccqEkAeA.s
+        GNU C++17 (GCC) version 9.3.0 (arm-none-eabi)
+        	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.19-GMP
+        
+        warning: GMP header version 6.2.0 differs from library version 6.3.0.
+        warning: MPFR header version 4.0.2 differs from library version 4.2.1.
+        warning: MPC header version 1.1.0 differs from library version 1.3.1.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/arm-none-eabi/usr/local/include"
+        ignoring duplicate directory "/usr/arm-none-eabi/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0
+         /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/arm-none-eabi/thumb/v6-m/nofp
+         /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/backward
+         /usr/lib/gcc/arm-none-eabi/9.3.0/include
+         /usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed
+         /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include
+        End of search list.
+        GNU C++17 (GCC) version 9.3.0 (arm-none-eabi)
+        	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.19-GMP
+        
+        warning: GMP header version 6.2.0 differs from library version 6.3.0.
+        warning: MPFR header version 4.0.2 differs from library version 4.2.1.
+        warning: MPC header version 1.1.0 differs from library version 1.3.1.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: f3401ca2523d3283967ad84448fc87a6
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu++17' '-v' '-o' 'CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m'
+         /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/as -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccqEkAeA.s
+        GNU assembler version 2.32 (arm-none-eabi) using BFD version (GNU Binutils) 2.32
+        COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu++17' '-v' '-o' 'CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m'
+        Linking CXX executable cmTC_d2b3d.elf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2b3d.dir/link.txt --verbose=1
+        /usr/bin/arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb  -Wl,--build-id=none -nostdlib  -v CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_d2b3d.elf
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/arm-none-eabi-g++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper
+        Target: arm-none-eabi
+        Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib
+        Thread model: single
+        gcc version 9.3.0 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d2b3d.elf' '-mfloat-abi=soft' '-march=armv6s-m'
+         /usr/lib/gcc/arm-none-eabi/9.3.0/collect2 -plugin /usr/lib/gcc/arm-none-eabi/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYEdwJO.res --sysroot=/usr/arm-none-eabi -X -o cmTC_d2b3d.elf -L/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0 -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib -L/usr/arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj
+        /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d2b3d.elf' '-mfloat-abi=soft' '-march=armv6s-m'
+        make[1]: Leaving directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0]
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/arm-none-eabi/thumb/v6-m/nofp]
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/backward]
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/include]
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed]
+          add: [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0] ==> [/usr/arm-none-eabi/include/c++/9.3.0]
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/arm-none-eabi/thumb/v6-m/nofp] ==> [/usr/arm-none-eabi/include/c++/9.3.0/arm-none-eabi/thumb/v6-m/nofp]
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/backward] ==> [/usr/arm-none-eabi/include/c++/9.3.0/backward]
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/include] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0/include]
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed]
+        collapse include dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include] ==> [/usr/arm-none-eabi/include]
+        implicit include dirs: [/usr/arm-none-eabi/include/c++/9.3.0;/usr/arm-none-eabi/include/c++/9.3.0/arm-none-eabi/thumb/v6-m/nofp;/usr/arm-none-eabi/include/c++/9.3.0/backward;/usr/lib/gcc/arm-none-eabi/9.3.0/include;/usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed;/usr/arm-none-eabi/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/amelia/WISDOM/wisdom_sensor_net/drivers/rp2x_rfm69_rudp/CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d2b3d/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_d2b3d.dir/build.make CMakeFiles/cmTC_d2b3d.dir/build]
+        ignore line: [make[1]: Entering directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N']
+        ignore line: [Building CXX object CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/usr/bin/arm-none-eabi-g++   -mcpu=cortex-m0plus -mthumb  -std=gnu++17   -v -o CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-none-eabi-g++]
+        ignore line: [Target: arm-none-eabi]
+        ignore line: [Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 9.3.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu++17' '-v' '-o' 'CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/cc1plus -quiet -v -imultilib thumb/v6-m/nofp -D__USES_INITFINI__ /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -march=armv6s-m -auxbase-strip CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj -std=gnu++17 -version -o /tmp/ccqEkAeA.s]
+        ignore line: [GNU C++17 (GCC) version 9.3.0 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.19-GMP]
+        ignore line: []
+        ignore line: [warning: GMP header version 6.2.0 differs from library version 6.3.0.]
+        ignore line: [warning: MPFR header version 4.0.2 differs from library version 4.2.1.]
+        ignore line: [warning: MPC header version 1.1.0 differs from library version 1.3.1.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/arm-none-eabi/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/usr/arm-none-eabi/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/arm-none-eabi/thumb/v6-m/nofp]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include/c++/9.3.0/backward]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/include]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/include-fixed]
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (GCC) version 9.3.0 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.19-GMP]
+        ignore line: []
+        ignore line: [warning: GMP header version 6.2.0 differs from library version 6.3.0.]
+        ignore line: [warning: MPFR header version 4.0.2 differs from library version 4.2.1.]
+        ignore line: [warning: MPC header version 1.1.0 differs from library version 1.3.1.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: f3401ca2523d3283967ad84448fc87a6]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu++17' '-v' '-o' 'CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/as -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccqEkAeA.s]
+        ignore line: [GNU assembler version 2.32 (arm-none-eabi) using BFD version (GNU Binutils) 2.32]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-std=gnu++17' '-v' '-o' 'CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [Linking CXX executable cmTC_d2b3d.elf]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2b3d.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb  -Wl --build-id=none -nostdlib  -v CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_d2b3d.elf]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/arm-none-eabi-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper]
+        ignore line: [Target: arm-none-eabi]
+        ignore line: [Configured with: ../configure --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-libstdc__-v3 --disable-nls --disable-shared --disable-threads --disable-tls --disable-werror --enable-__cxa_atexit --enable-c99 --enable-gnu-indirect-function --enable-interwork --enable-languages=c,c++ --enable-long-long --enable-multilib --enable-plugins --host= --libdir=/usr/lib --libexecdir=/usr/lib --prefix=/usr --target=arm-none-eabi --with-gmp --with-gnu-as --with-gnu-ld --with-headers=/usr/arm-none-eabi/include --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-isl --with-libelf --with-mpc --with-mpfr --with-multilib-list=rmprofile --with-native-system-header-dir=/include --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/usr/arm-none-eabi --with-system-zlib]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 9.3.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/arm-none-eabi/lib/thumb/v6-m/nofp/:/usr/lib/gcc/arm-none-eabi/9.3.0/:/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/:/usr/arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d2b3d.elf' '-mfloat-abi=soft' '-march=armv6s-m']
+        link line: [ /usr/lib/gcc/arm-none-eabi/9.3.0/collect2 -plugin /usr/lib/gcc/arm-none-eabi/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYEdwJO.res --sysroot=/usr/arm-none-eabi -X -o cmTC_d2b3d.elf -L/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/arm-none-eabi/lib/thumb/v6-m/nofp -L/usr/lib/gcc/arm-none-eabi/9.3.0 -L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib -L/usr/arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj]
+          arg [/usr/lib/gcc/arm-none-eabi/9.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/arm-none-eabi/9.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/arm-none-eabi/9.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccYEdwJO.res] ==> ignore
+          arg [--sysroot=/usr/arm-none-eabi] ==> ignore
+          arg [-X] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_d2b3d.elf] ==> ignore
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp]
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
+          arg [-L/usr/arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [/usr/arm-none-eabi/lib/thumb/v6-m/nofp]
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0]
+          arg [-L/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib] ==> dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib]
+          arg [-L/usr/arm-none-eabi/lib] ==> dir [/usr/arm-none-eabi/lib]
+          arg [--build-id=none] ==> ignore
+          arg [CMakeFiles/cmTC_d2b3d.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+        ignore line: [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start]
+        ignore line: [ defaulting to 0000000000008000]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_d2b3d.elf' '-mfloat-abi=soft' '-march=armv6s-m']
+        ignore line: [make[1]: Leaving directory '/home/amelia/WISDOM/wisdom_sensor_net/field_tests/2025-03-pennybrook/2025-03-pb/CMakeFiles/CMakeScratch/TryCompile-QNHm5N']
+        ignore line: []
+        ignore line: []
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp]
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [/usr/arm-none-eabi/lib/thumb/v6-m/nofp]
+        collapse library dir [/usr/arm-none-eabi/lib/thumb/v6-m/nofp] ==> [/usr/arm-none-eabi/lib/thumb/v6-m/nofp]
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0] ==> [/usr/lib/gcc/arm-none-eabi/9.3.0]
+        collapse library dir [/usr/lib/gcc/arm-none-eabi/9.3.0/../../../../arm-none-eabi/lib] ==> [/usr/arm-none-eabi/lib]
+        collapse library dir [/usr/arm-none-eabi/lib] ==> [/usr/arm-none-eabi/lib]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/usr/lib/gcc/arm-none-eabi/9.3.0/thumb/v6-m/nofp;/usr/arm-none-eabi/lib/thumb/v6-m/nofp;/usr/lib/gcc/arm-none-eabi/9.3.0;/usr/arm-none-eabi/lib]
+        implicit fwks: []
+      
+      
+...
