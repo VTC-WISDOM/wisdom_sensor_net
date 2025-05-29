@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #include "pico/stdlib.h"
 #include "tusb.h"
@@ -35,7 +36,7 @@
 void main() {
 	stdio_init_all();
 	while (!tud_cdc_connected()) { sleep_ms(100); };
-	
+	printf("hello!\n");
 	int rval = whale_init(W_RADIO_MODULE);
 	if (rval != WHALE_OK)
 		goto ERROR_LOOP;
@@ -48,23 +49,26 @@ void main() {
 	int tx_addr = {0};
 
 	uint8_t success[PAYLOAD_BUFFER_SIZE + 256] = "rx: ";
-	strcat(success,);
 
 	uint8_t failure[] = "rx failure";
-	
-	int16_t rssi = 0;
-	uint8_t rssi[8];
 
+	int rssi_raw = 0;
+	//uint8_t rssi[8];
+
+	printf("start main loop\n");
 	for (;;) {
 
 		if (w_radio_rx(buffer, PAYLOAD_BUFFER_SIZE, &received, &tx_addr) != W_RADIO_OK) {
-			w_radio_tx(MONITOR_ADDR, failure, sizeof(failure));
+			//w_radio_tx(MONITOR_ADDR, failure, sizeof(failure));
 			printf("Rx failed: %i\n", w_radio_error_get());
 			}
 		else {
 			printf("Received: %u\n", received);
-			w_radio_tx(MONITOR_ADDR, success, sizeof(success));
+			if(w_radio_get_rssi(&rssi_raw) != W_RADIO_OK) rssi_raw = -101;
+			printf("rssi: %i\n", rssi_raw);
+			//w_radio_tx(MONITOR_ADDR, &rssi, sizeof(rssi));
 		}
+		printf(".\n");
 
 		sleep_ms(1000);
 	}

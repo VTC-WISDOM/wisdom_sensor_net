@@ -34,7 +34,7 @@
 
 void main() {
 	stdio_init_all();
-	//while (!tud_cdc_connected()) { sleep_ms(100); };
+	while (!tud_cdc_connected()) { sleep_ms(100); };
 
 	int rval = whale_init(W_RADIO_MODULE);
 	if (rval != WHALE_OK)
@@ -52,13 +52,13 @@ void main() {
 
 	for (;;) {
 
-		if (w_radio_tx(0x01, payload, PAYLOAD_SIZE) != W_RADIO_OK) {
+		if (w_radio_tx(0x02, payload, PAYLOAD_SIZE) != W_RADIO_OK) {
 			printf("Tx failure\n");
-			w_radio_tx(MONITOR_ADDR, failure, sizeof(failure));
+			//w_radio_tx(MONITOR_ADDR, failure, sizeof(failure));
 		}
 		else {
 			printf("Tx success\n");
-			w_radio_tx(MONITOR_ADDR, success, sizeof(success));
+			//w_radio_tx(MONITOR_ADDR, success, sizeof(success));
 		}
 
 		sleep_ms(1000);
