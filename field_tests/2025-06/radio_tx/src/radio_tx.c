@@ -21,6 +21,12 @@
 //	You should have received a copy of the GNU General Public License
 //	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+/*
+ * 
+ *
+ */
+
+
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -29,12 +35,21 @@
 #include "tusb.h"
 
 #include "whale.h"
+#include "pcf8523_rp2040.h"
 
-#define MONITOR_ADDR 0x45
+#define RTC_SDA
+#define RTC_SCL
 
 void main() {
 	stdio_init_all();
 	//while (!tud_cdc_connected()) { sleep_ms(100); };
+	
+	struct pcf8523_time_date_s rtc_datetime;
+	pcf8523_time_date_get_all(,&rtc_datetime);
+
+	sleep_ms(2000);
+	printf("meow");
+
 
 	int rval = whale_init(W_RADIO_MODULE);
 	if (rval != WHALE_OK)
@@ -42,13 +57,13 @@ void main() {
 
 	w_radio_node_address_set(0x01);
 
-#define PAYLOAD_SIZE (0)
-	uint8_t payload[PAYLOAD_SIZE];
+#define PAYLOAD_SIZE (64)
+	uint8_t payload[PAYLOAD_SIZE] = "00:00,0.00,FFFF";
 	for (int i = 0; i < PAYLOAD_SIZE; i++)
 		payload[i] = i;
 
 	uint8_t success[] = "tx success";
-	uint8_t failure[] = "tx failure";
+uint8_t failure[] = "tx failure";
 
 	w_radio_dbm_set(20);
 
@@ -56,11 +71,9 @@ void main() {
 
 		if (w_radio_tx(0x02, payload, PAYLOAD_SIZE) != W_RADIO_OK) {
 			printf("Tx failure\n");
-			//w_radio_tx(MONITOR_ADDR, failure, sizeof(failure));
 		}
 		else {
 			printf("Tx success\n");
-			//w_radio_tx(MONITOR_ADDR, success, sizeof(success));
 		}
 
 		sleep_ms(1000);

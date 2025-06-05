@@ -16,7 +16,14 @@ else()
 	set(WHALE_PATH "$ENV{WHALE_PATH}")
 endif()
 
+if (NOT DEFINED ENV{WISDOM_PROJECT_PATH})
+	set(WISDOM_PROJECT_PATH "~/pico/wisdom_sensor_net")
+else()
+	set(WISDOM_PROJECT_PATH "ENV{WISDOM_PROJECT_PATH}")
+endif()
+
 get_filename_component(WHALE_PATH "${WHALE_PATH}" REALPATH)
+get_filename_component(WISDOM_PROJECT_PATH "${WISDOM_PROJECT_PATH}" REALPATH)
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(external/pico_sdk_import.cmake)
@@ -26,6 +33,8 @@ include(external/whale_import.cmake)
 if (PICO_SDK_VERSION_STRING VERSION_LESS "2.0.0")
   message(FATAL_ERROR "Raspberry Pi Pico SDK version 2.0.0 (or later) required. Your version is ${PICO_SDK_VERSION_STRING}")
 endif()
+
+add_subdirectory(${WISDOM_PROJECT_PATH}/drivers/pcf8523_rp2040 drivers/pcf8523_rp2040)
 
 set(target "radio_example_tx")
 project(${target} C CXX ASM)
@@ -37,6 +46,8 @@ pico_sdk_init()
 target_link_libraries(${target} pico_stdlib)
 # Add wisdom hal extension
 target_link_libraries(${target} wisdom_hal_extender)
+# Add RTC library
+target_link_libraries(${target} pcf8523_rp2040)
 
 pico_enable_stdio_uart(${target} 0)
 pico_enable_stdio_usb(${target} 1)
