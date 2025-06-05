@@ -5,6 +5,7 @@
 #define DATE_TIME_EMO_H
 
 #include <stdbool.h>
+#include <stdint.h>
 
 typedef unsigned uint;
 
