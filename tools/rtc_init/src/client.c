@@ -1,4 +1,4 @@
-// radio_tx.c
+// client.c
 
 //	Copyright (C) 2024 
 //	Evan Morse
@@ -28,7 +28,6 @@
 #include "hardware/i2c.h"
 #include "tusb.h"
 
-#include "radio.h"
 #include "pcf8523_rp2040.h"
 #include "rtc_sync.h"
 
@@ -59,8 +58,6 @@ int main() {
 	
 	bool success = false;
 	
-	if (radio_init() == false)
-		goto LOOP_BEGIN;	
 
 	i2c_init(I2C_INST, 500 * 1000);
 	gpio_set_function(PIN_SCL, GPIO_FUNC_I2C);
@@ -76,14 +73,6 @@ int main() {
 
 	success = true;
 LOOP_BEGIN:;
-
-	char status_str[ERROR_STR_MAX];
-	if (success = false) {
-		radio_status(status_str);		
-		error_loop(status_str);
-	}
-
-	radio_address_set(0xCC);
 
 	while (!tud_cdc_connected()) { sleep_ms(100); };
 
