@@ -35,7 +35,7 @@
 
 void main() {
 	stdio_init_all();
-	while (!tud_cdc_connected()) { sleep_ms(100); };
+	//while (!tud_cdc_connected()) { sleep_ms(100); };
 	printf("hello!\n");
 	int rval = whale_init(W_RADIO_MODULE);
 	if (rval != WHALE_OK)
@@ -54,6 +54,8 @@ void main() {
 
 	int rssi_raw = 0;
 	//uint8_t rssi[8];
+	
+	w_radio_dbm_set(20);
 
 	printf("start main loop\n");
 	for (;;) {
@@ -64,8 +66,9 @@ void main() {
 			}
 		else {
 			printf("Received: %u\n", received);
-			//if(w_radio_get_rssi(&rssi_raw) != W_RADIO_OK) rssi_raw = -101;
-			//printf("rssi: %i\n", rssi_raw);
+			w_radio_rssi_get(&rssi_raw);
+			printf("rssi: %i\n", rssi_raw);
+			//sprintf(&rssi, "rssi: %i\n", rssi_raw);
 			//w_radio_tx(MONITOR_ADDR, &rssi, sizeof(rssi));
 		}
 		printf(".\n");

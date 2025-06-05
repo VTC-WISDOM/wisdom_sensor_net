@@ -34,7 +34,7 @@
 
 void main() {
 	stdio_init_all();
-	while (!tud_cdc_connected()) { sleep_ms(100); };
+	//while (!tud_cdc_connected()) { sleep_ms(100); };
 
 	int rval = whale_init(W_RADIO_MODULE);
 	if (rval != WHALE_OK)
@@ -42,13 +42,15 @@ void main() {
 
 	w_radio_node_address_set(0x01);
 
-#define PAYLOAD_SIZE (1024 * 5)
+#define PAYLOAD_SIZE (0)
 	uint8_t payload[PAYLOAD_SIZE];
 	for (int i = 0; i < PAYLOAD_SIZE; i++)
 		payload[i] = i;
 
 	uint8_t success[] = "tx success";
 	uint8_t failure[] = "tx failure";
+
+	w_radio_dbm_set(20);
 
 	for (;;) {
 
