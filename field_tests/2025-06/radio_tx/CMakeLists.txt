@@ -43,7 +43,7 @@ add_executable(${target})
 pico_sdk_init()
 
 # Add the pico standard library to the build
-target_link_libraries(${target} pico_stdlib)
+target_link_libraries(${target} pico_stdlib hardware_adc)
 # Add wisdom hal extension
 target_link_libraries(${target} wisdom_hal_extender)
 # Add RTC library

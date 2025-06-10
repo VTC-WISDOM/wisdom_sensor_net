@@ -34,6 +34,7 @@
 
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
+#include "hardware/adc.h"
 #include "tusb.h"
 
 #include "whale.h"
@@ -67,7 +68,6 @@ void main() {
 		goto ERROR_LOOP;
 	}
 
-	for(;;) {
 	uint8_t seconds;
 	pcf8523_seconds_get(index, &seconds);	
 	uint8_t minutes;
@@ -82,13 +82,20 @@ void main() {
 	pcf8523_days_get(index, &days);
 	
 
-	
+	//adc init
+	adc_init();
+	adc_gpio_init(26);
+	adc_select_input(0);
+	uint16_t bat_raw = adc_read();
+	const float conversion = 6.6f / (1<<12);
+	float bat = bat_raw * conversion;
+
 	//for serial monitor purposes
 	sleep_ms(2000);
-	printf("%02u-%02u-%02uT%02u:%02u:%02u\n", 
+	printf("%02u-%02u-%02uT%02u:%02u:%02u,%2.2f\n", 
 			years, months, days,
-			hours, minutes, seconds);
-	}
+			hours, minutes, seconds,
+			bat);
 
 	//radio init
 	int rval = whale_init(W_RADIO_MODULE);
@@ -98,12 +105,11 @@ void main() {
 	w_radio_node_address_set(0x01);
 
 #define PAYLOAD_SIZE (64)
-	uint8_t payload[PAYLOAD_SIZE] = "00:00,0.00,FFFF";
-	for (int i = 0; i < PAYLOAD_SIZE; i++)
-		payload[i] = i;
-
-	uint8_t success[] = "tx success";
-	uint8_t failure[] = "tx failure";
+	uint8_t payload[PAYLOAD_SIZE] = "00-00-00T00:00,0.00";
+	snprintf(payload, PAYLOAD_SIZE, "%02u-%02u-%02uT%02u:%02u:%02u,%2.2f",
+			years, months, days,
+			hours, minutes, seconds,
+			bat);
 
 	w_radio_dbm_set(20);
 

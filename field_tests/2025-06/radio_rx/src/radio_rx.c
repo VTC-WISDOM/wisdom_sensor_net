@@ -35,29 +35,25 @@
 
 void main() {
 	stdio_init_all();
-	//while (!tud_cdc_connected()) { sleep_ms(100); };
-	printf("hello!\n");
+	while (!tud_cdc_connected()) { sleep_ms(100); };
+	
 	int rval = whale_init(W_RADIO_MODULE);
 	if (rval != WHALE_OK)
 		goto ERROR_LOOP;
 
 	w_radio_node_address_set(0x02);
 
-#define PAYLOAD_BUFFER_SIZE (1024 * 5)
+#define PAYLOAD_BUFFER_SIZE (64)
 	uint8_t buffer[PAYLOAD_BUFFER_SIZE] = {0};
 	int received = {0};
 	int tx_addr = {0};
 
-	uint8_t success[PAYLOAD_BUFFER_SIZE + 256] = "rx: ";
-
-	uint8_t failure[] = "rx failure";
 
 	int rssi_raw = 0;
 	//uint8_t rssi[8];
 	
 	w_radio_dbm_set(20);
-
-	printf("start main loop\n");
+	printf("time(UTC),battery(V),rssi(dB)\n");
 	for (;;) {
 
 		if (w_radio_rx(buffer, PAYLOAD_BUFFER_SIZE, &received, &tx_addr) != W_RADIO_OK) {
@@ -65,13 +61,10 @@ void main() {
 			printf("Rx failed: %i\n", w_radio_error_get());
 			}
 		else {
-			printf("Received: %u\n", received);
+
 			w_radio_rssi_get(&rssi_raw);
-			printf("rssi: %i\n", rssi_raw);
-			//sprintf(&rssi, "rssi: %i\n", rssi_raw);
-			//w_radio_tx(MONITOR_ADDR, &rssi, sizeof(rssi));
+			printf("%s,%i\n", buffer, rssi_raw);
 		}
-		printf(".\n");
 
 		sleep_ms(1000);
 	}
