@@ -13,3 +13,6 @@
 [submodule "whale"]
 	path = whale
 	url = https://github.com/e-mo/wisdom_hal.git
+[submodule "drivers/rp2x_pcf8523"]
+	path = drivers/rp2x_pcf8523
+	url = git@github.com:VTC-WISDOM/rp2x_pcf8523.git
