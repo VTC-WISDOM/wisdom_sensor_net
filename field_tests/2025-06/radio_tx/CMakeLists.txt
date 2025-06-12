@@ -34,7 +34,7 @@ if (PICO_SDK_VERSION_STRING VERSION_LESS "2.0.0")
   message(FATAL_ERROR "Raspberry Pi Pico SDK version 2.0.0 (or later) required. Your version is ${PICO_SDK_VERSION_STRING}")
 endif()
 
-add_subdirectory(${WISDOM_PROJECT_PATH}/drivers/pcf8523_rp2040 drivers/pcf8523_rp2040)
+add_subdirectory(${WISDOM_PROJECT_PATH}/drivers/rp2x_pcf8523 drivers/pcf8523_rp2040)
 
 set(target "radio_example_tx")
 project(${target} C CXX ASM)
@@ -43,7 +43,7 @@ add_executable(${target})
 pico_sdk_init()
 
 # Add the pico standard library to the build
-target_link_libraries(${target} pico_stdlib hardware_adc)
+target_link_libraries(${target} pico_stdlib hardware_adc hardware_i2c)
 # Add wisdom hal extension
 target_link_libraries(${target} wisdom_hal_extender)
 # Add RTC library
