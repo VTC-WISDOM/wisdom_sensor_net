@@ -81,6 +81,7 @@ void main() {
 	uint8_t days;
 	pcf8523_days_get(index, &days);
 	
+	//w_rtc_init();
 
 	//adc init
 	adc_init();
