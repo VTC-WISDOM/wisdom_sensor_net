@@ -12,4 +12,4 @@
 	url = https://github.com/e-mo/no_alloc_circle_buffer.git
 [submodule "whale"]
 	path = whale
-	url = https://github.com/e-mo/wisdom_hal.git
+	url = https://github.com/VTC-WISDOM/wisdom_hal_extender.git
