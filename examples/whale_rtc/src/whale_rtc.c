@@ -31,9 +31,21 @@ void main() {
 	while (!tud_cdc_connected()) { sleep_ms(100); };
 
 	printf("meow\n");
-	if(w_rtc_init()) printf("aaaaa\n");
+	if(w_rtc_init()) goto ERROR_LOOP;
+
 	struct w_rtc_datetime_t datetime;
 
-	printf("initialized rtc\n");
+
+	for(;;) {
+		w_rtc_datetime_get(&datetime);
+		printf("%02u:%02u:%02u\n", datetime.hours, datetime.minutes, datetime.seconds);
+		sleep_ms(1000);
+	}
+
+ERROR_LOOP:
+	for(;;) {
+		printf("error!");
+		sleep_ms(500);
+	}
 
 }
