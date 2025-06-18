@@ -25,12 +25,35 @@
 #include "tusb.h"
 
 #include "whale.h"
+#include "rp2x_cat24m01.h"
+
+
+#define I2C_INST (i2c0)
+#define PIN_SCL  (5)
+#define PIN_SDA  (4)
+#define PIN_IRQ  (2)
+
 
 void main() {
 	stdio_init_all();
+
+	i2c_init(I2C_INST, 500 * 1000);
+        gpio_set_function(PIN_SCL, GPIO_FUNC_I2C);
+        gpio_set_function(PIN_SDA, GPIO_FUNC_I2C);
+        gpio_pull_up(PIN_SCL);
+        gpio_pull_up(PIN_SDA);
+        gpio_pull_up(PIN_IRQ);
+        uint index = I2C_NUM(I2C_INST);
+
 	while (!tud_cdc_connected()) { sleep_ms(100); };
 
 	printf("meow\n");
+
+	cat24_write_byte(index, 0x00, 0x01, 0x01, 0x45);
+	uint8_t buf = 0;
+	cat24_read_byte(index, 0x00, 0x01, 0x01, &buf);
+
+	printf("%u", buf);
 
 
 	for(;;) {
