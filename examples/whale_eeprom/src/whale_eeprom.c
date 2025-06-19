@@ -25,7 +25,6 @@
 #include "tusb.h"
 
 #include "whale.h"
-#include "rp2x_cat24m01.h"
 #include "hardware/i2c.h"
 
 
@@ -38,49 +37,33 @@ void main() {
 	stdio_init_all();
 
 	while (!tud_cdc_connected()) { sleep_ms(100); };
-	i2c_init(I2C_INST, 100 * 1000);
-	gpio_set_function(PIN_SCL, GPIO_FUNC_I2C);
-	gpio_set_function(PIN_SDA, GPIO_FUNC_I2C);
-	gpio_pull_up(PIN_SCL);
-	gpio_pull_up(PIN_SDA);
-	uint index = I2C_NUM(I2C_INST);
 
+	w_eeprom_init();
 
-	printf("meow\n");
+	int status = -1;
 
-	printf("write 0x45 to page 1 addr 1... ");
-	if(cat24_write_byte(index, 0x00, 0x01, 0x01, 0x45)) printf("success!\n");
+	printf("erasing all flash ... ");
+	status = w_eeprom_full_erase();
+	if(status == W_EEPROM_OK) printf("success!\n");
 	else printf("fail :(\n");
 
-	//uint8_t tmp;
-	//while(!cat24_read_byte(index, 0x00, 0x00, 0x00, &tmp));
-	sleep_ms(3);
+	uint8_t test_read_buf[16];
+	printf("reading first byte... ");
+	status = w_eeprom_read(0, 0x00, test_read_buf, 3);
+	if(status == W_EEPROM_OK) printf("p0 a0: 0x%x\n", test_read_buf[0]);
+	else printf("could not read from eeprom\n");
 
-	uint8_t buf = 0;	
-	printf("read byte from page 1 addr 1 into buf... ");
-	if(cat24_read_byte(index, 0x00, 0x01, 0x01, &buf)) {
-		printf("success!\n");
+r
+	uint8_t test_write_buf[] = "meow!";
+	printf("writing string... ");
+	status = w_eeprom_write(420, 0x45, test_write_buf, sizeof(test_write_buf));
+	if(status == W_EEPROM_OK) printf("success!\n");
+	else printf("could not write to eeprom\n");
 
-		printf("read: 0x%x\n", buf);
-	} else printf("fail :(\n");
-
-	while(cat24_is_busy(index, 0x00));
-
-	printf("write string to page 2 addr 0... ");
-	uint8_t test_string[] = "meow!";
-	if(cat24_write_page(index, 0x00, 0x02, 0x00, test_string, sizeof(test_string))) printf("success!\n");
-	else printf("fail :(\n");
-
-	while(cat24_is_busy(index, 0x00));
-
-	printf("read back string from page 2 addr 0... ");
-	uint8_t read_str[6];
-	if(cat24_read_page(index, 0x00, 0x02, 0x00, read_str, sizeof(read_str))) {
-		printf("success!\n");
-
-		printf("read: %s\n", read_str);
-	} else printf("fail :(\n");
-
+	printf("reading back string... ");
+	status = w_eeprom_read(420, 0x45, test_read_buf, sizeof(test_write_buf));
+	if(status == W_EEPROM_OK) printf("success!\nread string: %s\n", test_read_buf);
+	else printf("could not read from eeprom\n");
 
 
 	for(;;) {
