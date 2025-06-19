@@ -53,7 +53,6 @@ void main() {
 	if(status == W_EEPROM_OK) printf("p0 a0: 0x%x\n", test_read_buf[0]);
 	else printf("could not read from eeprom\n");
 
-r
 	uint8_t test_write_buf[] = "meow!";
 	printf("writing string... ");
 	status = w_eeprom_write(420, 0x45, test_write_buf, sizeof(test_write_buf));
