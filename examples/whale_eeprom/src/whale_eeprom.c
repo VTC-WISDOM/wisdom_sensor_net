@@ -26,34 +26,61 @@
 
 #include "whale.h"
 #include "rp2x_cat24m01.h"
+#include "hardware/i2c.h"
 
 
 #define I2C_INST (i2c0)
 #define PIN_SCL  (5)
 #define PIN_SDA  (4)
-#define PIN_IRQ  (2)
 
 
 void main() {
 	stdio_init_all();
 
-	i2c_init(I2C_INST, 500 * 1000);
-        gpio_set_function(PIN_SCL, GPIO_FUNC_I2C);
-        gpio_set_function(PIN_SDA, GPIO_FUNC_I2C);
-        gpio_pull_up(PIN_SCL);
-        gpio_pull_up(PIN_SDA);
-        gpio_pull_up(PIN_IRQ);
-        uint index = I2C_NUM(I2C_INST);
-
 	while (!tud_cdc_connected()) { sleep_ms(100); };
+	i2c_init(I2C_INST, 100 * 1000);
+	gpio_set_function(PIN_SCL, GPIO_FUNC_I2C);
+	gpio_set_function(PIN_SDA, GPIO_FUNC_I2C);
+	gpio_pull_up(PIN_SCL);
+	gpio_pull_up(PIN_SDA);
+	uint index = I2C_NUM(I2C_INST);
+
 
 	printf("meow\n");
 
-	cat24_write_byte(index, 0x00, 0x01, 0x01, 0x45);
-	uint8_t buf = 0;
-	cat24_read_byte(index, 0x00, 0x01, 0x01, &buf);
+	printf("write 0x45 to page 1 addr 1... ");
+	if(cat24_write_byte(index, 0x00, 0x01, 0x01, 0x45)) printf("success!\n");
+	else printf("fail :(\n");
 
-	printf("%u", buf);
+	//uint8_t tmp;
+	//while(!cat24_read_byte(index, 0x00, 0x00, 0x00, &tmp));
+	sleep_ms(3);
+
+	uint8_t buf = 0;	
+	printf("read byte from page 1 addr 1 into buf... ");
+	if(cat24_read_byte(index, 0x00, 0x01, 0x01, &buf)) {
+		printf("success!\n");
+
+		printf("read: 0x%x\n", buf);
+	} else printf("fail :(\n");
+
+	while(cat24_is_busy(index, 0x00));
+
+	printf("write string to page 2 addr 0... ");
+	uint8_t test_string[] = "meow!";
+	if(cat24_write_page(index, 0x00, 0x02, 0x00, test_string, sizeof(test_string))) printf("success!\n");
+	else printf("fail :(\n");
+
+	while(cat24_is_busy(index, 0x00));
+
+	printf("read back string from page 2 addr 0... ");
+	uint8_t read_str[6];
+	if(cat24_read_page(index, 0x00, 0x02, 0x00, read_str, sizeof(read_str))) {
+		printf("success!\n");
+
+		printf("read: %s\n", read_str);
+	} else printf("fail :(\n");
+
 
 
 	for(;;) {
