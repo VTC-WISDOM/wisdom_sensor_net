@@ -31,8 +31,9 @@
 
 void main() {
 	stdio_init_all();
-	//while (!tud_cdc_connected()) { sleep_ms(100); };
+	while (!tud_cdc_connected()) { sleep_ms(100); };
 	printf("meow\n");
+
 
 	//whale init! with the radio module
 	int modules = 0 | W_RADIO_MODULE;
