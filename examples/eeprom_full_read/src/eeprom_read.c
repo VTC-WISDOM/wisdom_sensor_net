@@ -50,11 +50,12 @@ void main() {
 		status = w_eeprom_read(i, 0x00, buffer, sizeof(buffer));
 		if(status == W_EEPROM_OK) {
 			for(int o = 0; o < 256; o++) {
-				if(buffer[o] == 0xFF) break;
+				if(buffer[o] == 0xFF || buffer == 0x00) break;
 				putchar(buffer[o]);
 			}
+			printf("\n");
 	}
-		else printf("couldn't read page %i\n", i);
+		else printf("couldn't read page %i", i);
 
 	}
 

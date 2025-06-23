@@ -60,7 +60,11 @@ void main() {
 		//grab the battery voltage and transmit it
 		w_get_battery_volts(&bat);
 		sprintf(tx_buffer, "%4.2f", bat);
-		w_radio_tx(DEST_ADDR, tx_buffer, 8);
+		
+		printf("transmitting... ");
+
+		if(w_radio_tx(DEST_ADDR, tx_buffer, 8) != W_RADIO_OK) printf("failed\n");
+		else printf("success\n");
 
 		//wait for a minute to pass!
 		while(datetime.minutes == minutes) {

@@ -30,7 +30,7 @@
 
 void main() {
 	stdio_init_all();
-	//while (!tud_cdc_connected()) { sleep_ms(100); };
+	while (!tud_cdc_connected()) { sleep_ms(100); };
 
 	//whale init! with every module
 	int modules = 0x0F;
@@ -42,35 +42,37 @@ void main() {
 	w_radio_dbm_set(6);
 
 	struct w_rtc_datetime_t datetime; //date&time
-	uint32_t eeprom_pointer = 0x00; //memory location - 8 LSBs for address, next 9 up for page
+	uint32_t eeprom_pointer = 0x00000000; //memory location - 8 LSBs for address, next 9 up for page
 	uint16_t page_pointer; //to extract the page from the eeprom pointer
 	uint8_t addr_pointer; //and the address
 
-	uint8_t pointer_buffer[4]; //so that we can read the current actual location
+	uint8_t pointer_buffer[3] = {0}; //so that we can read the current actual location
 
 	//read the next address pointer located at page 0 addr 0
 	//this way we can write the next address pointer every time we write data
 	//and if the device restarts, it remembers where to restart
 	//if the eeprom is erased(to 0xFF) then just set it to page 1 addr 0
 	w_eeprom_read(0x00, 0x00, pointer_buffer, 4);
-	eeprom_pointer = pointer_buffer[4];
-	eeprom_pointer += (pointer_buffer[3] << 8);
-	eeprom_pointer += (pointer_buffer[2] << 16);
-	printf("eeprom pointer: %x", eeprom_pointer);
-	if(pointer_buffer[4] == 0xFF) eeprom_pointer = 0x00000100;	
-
-
+	eeprom_pointer = pointer_buffer[2];
+	eeprom_pointer += ((uint32_t)pointer_buffer[1]) << 8;
+	eeprom_pointer += ((uint32_t)pointer_buffer[0]) << 16;
+	if(pointer_buffer[0] == 0xFF) eeprom_pointer = 0x00000100;
+	printf("eeprom pointer: %08x\n", eeprom_pointer);
 
 
 	uint8_t buffer[36]; //packet buffer!
 			    //in csv format! we will fill with yy-mm-dd,hh:mm:ss,olts,olts,rssi
-	uint8_t rx_buffer[8];
+	uint8_t rx_buffer[16];
 	int rx_size;
 	int tx_addr;
 	int rssi;
 	float bat;
+	bool usb_stop_flag = 1;
 
 	for(;;) {
+
+
+
 		if(w_radio_rx(rx_buffer, sizeof(rx_buffer), &rx_size, &tx_addr) == W_RADIO_OK) {
 			printf("rx success\n");
 			//separate the address and page from the eeprom pointer
@@ -101,10 +103,10 @@ void main() {
 
 			//and finally increment the pointer for next time and write it
 			eeprom_pointer += sizeof(buffer);
-			pointer_buffer[1] = eeprom_pointer >> 16;
-			pointer_buffer[2] = eeprom_pointer >> 8;
-			pointer_buffer[3] = eeprom_pointer;
-			w_eeprom_write(0x00, 0x00, pointer_buffer, 4);
+			pointer_buffer[0] = eeprom_pointer >> 16;
+			pointer_buffer[1] = eeprom_pointer >> 8;
+			pointer_buffer[2] = eeprom_pointer;
+			w_eeprom_write(0x00, 0x00, pointer_buffer, sizeof(pointer_buffer));
 
 		} else printf("rx failed!\n");
 
