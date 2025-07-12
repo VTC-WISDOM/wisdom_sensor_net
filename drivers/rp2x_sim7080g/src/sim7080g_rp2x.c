@@ -6,6 +6,7 @@
 
 #include "pico/stdlib.h"
 #include "hardware/uart.h"
+#include "hardware/gpio.h"
 #include "sim7080g_rp2x.h"
 
 void sim7080g_init(sim7080g_context_t *context, const struct sim7080g_config config) {
@@ -30,8 +31,7 @@ void sim7080g_pwr_toggle(sim7080g_context_t *context) {
 }
 
 void sim7080g_pwr_set(sim7080g_context_t *context, bool level) {
-	gpio_put(context->pin_pwr, level);
-}
+	gpio_put(context->pin_pwr, level);}
 
 uint sim7080g_uart_read(sim7080g_context_t *context, void *buffer, size_t size) {
 	uint count = 0;

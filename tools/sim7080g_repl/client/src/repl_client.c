@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
 
 	printf("Sim7080G RP2X Serial Repl\n");
 
-	int serial_port = rp2x_serial_open("/dev/ttyACM0", 10, 0, B115200);
+	int serial_port = rp2x_serial_open("/dev/ttyACM5", 10, 0, B115200);
 	perror("serial");
 	if (serial_port == -1) return 1;
 	
