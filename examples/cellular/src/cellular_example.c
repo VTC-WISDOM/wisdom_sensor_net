@@ -49,12 +49,22 @@ void main() {
 		.pin_pwr = 14
 	};
 
+	static sim7080g_config_t conf = {
+		.apn = sim_apn,
+		.sim_cmee = cmee_numeric,
+		.sim_cmgf = cmgf_pdu,
+		.sim_cnmp = cnmp_auto,
+		.sim_cmnb = cmnb_catm
+	};
+
 	//sim7080g_init(sim);
 
 	printf("starting sim7080g... ");
 	sim7080g_init(sim);
 	if(!sim7080g_start(sim)) goto ERROR_LOOP;
 	printf("started\n");
+
+	sim7080g_config(sim, conf);
 
 	sleep_ms(2000);
 	printf("power off test\n");
