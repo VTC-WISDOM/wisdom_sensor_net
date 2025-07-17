@@ -1,0 +1,16 @@
+****PWD HELP PAGE****
+
+COMMAND NAME: pwd
+
+COMMAND SYNTAX: pwd
+
+COMMAND FULL NAME: present working directory
+
+COMMAND DEFINTION: displays the current working directory of the user
+
+COMMAND EXAMPLE:
+
+user@whale.os ~> pwd 
+user@whale.os ~> ~/
+
+ 				

@@ -1,0 +1,15 @@
+****FLASH HELP PAGE****
+
+COMMAND NAME: flash
+
+COMMAND SYNTAX: flash <file_name>
+
+COMMAND FULL NAME: flash
+
+COMMAND DEFINTION: flashed the specified file to the connected device
+
+COMMAND EXAMPLE:
+
+user@whale.os ~> flash example_code.uf2
+flashed pico successfully!!! :)
+user@whale.os ~> 				

@@ -1,0 +1,17 @@
+****SEND HELP PAGE****
+
+COMMAND NAME: send
+
+COMMAND SYNTAX: send <address> <message>
+
+COMMAND FULL NAME: sends
+
+COMMAND DEFINTION: sends user message to specified address
+
+COMMAND EXAMPLE:
+
+user@whale.os ~> send 0x12 "this is my message"
+message sent! :)
+user@whale.os ~> 
+
+ 				

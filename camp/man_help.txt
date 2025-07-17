@@ -1,0 +1,49 @@
+****WELCOME TO WHALE OS HELP PAGE****
+
+*START HERE*
+--WHALE OS is an operating system you can be use to
+  program and debug your code :)
+
+--Use the functions below to DEBUG your code
+
+--Remember the functions are case senstive, make sure
+  your capslock is off
+
+/*WHALE OS COMMANDS*/
+
+COMMAND NAME     COMMAND DEFINTION
+
+	pwd          --print your working directory
+
+	ls           --Lists files and directories @PWD
+
+	cat          --copies file to specified destination
+
+	edit         --pulls up editor window to edit code
+
+	cd           --change the directory you are in
+
+	build        --builds a binary of your program
+
+	flash        --loads the specified binary to connected 
+
+	man          --opens up the manual for the specified page
+
+	test         --runs test routine on WISDOM hardware
+
+	send         --sends a user input string to the specified radio
+
+	
+--For further command information: man [COMMAND NAME]
+		
+/* HELPFUL MAN PAGES*/
+
+MAN PAGE NAME    DESCRIPTION
+
+	help         --helpful overview for navigating WHALE OS
+
+	error        --error status information and identifiers
+
+	about        --information about WISDOM Project & Hardware
+
+	console      --information about the console 

@@ -1,0 +1,17 @@
+****TEST HELP PAGE****
+
+COMMAND NAME: test
+
+COMMAND SYNTAX: test
+
+COMMAND FULL NAME: test
+
+COMMAND DEFINTION: runs test routine on the connected hardware, and prints
+				   the results to console
+
+COMMAND EXAMPLE:
+
+user@whale.os ~> test 
+user@whale.os ~> 
+
+ 				

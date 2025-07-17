@@ -1,0 +1,23 @@
+****edit HELP PAGE****
+
+COMMAND NAME: edit
+
+COMMAND SYNTAX: edit <file_name>
+
+COMMAND FULL NAME: editor
+
+COMMAND DEFINTION: opens the editor to edit the specified file_name
+
+EDITOR COMMANDS:
+
+	d    --delete
+	x    --copy
+	hjkl --user arrow keys. h is left. j is down. k is up. l is right.
+	q    --exit the editor  
+
+COMMAND EXAMPLE:
+
+user@whale.os>edit code_example.c
+opens editor
+
+ 				

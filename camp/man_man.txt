@@ -1,0 +1,17 @@
+****MAN HELP PAGE****
+
+COMMAND NAME: man
+
+COMMAND SYNTAX: man <manual_page>
+
+COMMAND FULL NAME: manual
+
+COMMAND DEFINTION: Opens the specified manual page. Use man to
+				   search for helpful information about WHALE OS
+
+COMMAND EXAMPLE:
+
+user@whale.os ~>man help
+
+
+ 				

@@ -1,0 +1,16 @@
+****CAT HELP PAGE****
+
+COMMAND NAME: cat
+
+COMMAND SYNTAX: cat <filename>
+
+COMMAND FULL NAME: concatenate
+
+COMMAND DEFINTION: prints the contents of a file to the terminal
+
+COMMAND EXAMPLE:
+
+user@whale.os ~> cat read_me.txt
+Hello! I am a read_me document
+user@whale.os ~>
+				

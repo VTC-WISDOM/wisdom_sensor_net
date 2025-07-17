@@ -1,0 +1,27 @@
+****ERROR HELP PAGE****
+
+SERIAL ERROR CODES:
+	Serial error codes are generated when a UART commmunication flag is raised
+heck the error codes below to troubleshoot
+
+RADIO_FAIL                  there is no communication with the device. Check to see
+					        if your device is connected. For more information use
+				            the man test to run diagnostics.
+							
+BUFFER_OVERFLOW
+
+NO_ACK
+
+TRANSMISSION_FAILED
+
+If serial output is malfunctioning refer to the "error_blink" man page.
+
+--spc note error_blink is description of blinky and how to implement the physical
+hardware once complete use flash error_blink.c
+--this also includes the the blinky error codes
+
+
+
+
+
+ 				

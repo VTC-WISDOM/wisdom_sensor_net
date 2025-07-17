@@ -1,0 +1,17 @@
+****cd HELP PAGE****
+
+COMMAND NAME: cd
+
+COMMAND SYNTAX: cd <file_path>
+
+COMMAND FULL NAME: cd directory
+
+COMMAND DEFINTION: changes working directory to user specified directory
+
+COMMAND EXAMPLE:
+
+user@whale.os ~> cd docs/
+user@whale.os ~/docs>  
+
+
+ 				

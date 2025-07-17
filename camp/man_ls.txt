@@ -1,0 +1,17 @@
+****LS HELP PAGE****
+
+COMMAND NAME: ls
+
+COMMAND SYNTAX: ls
+
+COMMAND FULL NAME: list
+
+COMMAND DEFINTION: displays all the files in the present working directory
+
+COMMAND EXAMPLE:
+
+user@whale.os ~> ls
+man_ls.txt other_file.txt
+user@whale.os ~> ls
+
+				
