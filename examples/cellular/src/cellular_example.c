@@ -24,6 +24,7 @@
 
 #include "pico/stdlib.h"
 #include "tusb.h"
+#include "hardware/gpio.h"
 
 #include "whale.h"
 #include "rp2x_sim7080g.h"
@@ -40,17 +41,29 @@ void main() {
 	stdio_init_all();
 
 	while (!tud_cdc_connected()) { sleep_ms(100); };
-
-	sim7080g_inst_t sim = {
+	
+	static sim7080g_inst_t sim = {
 		.uart = uart0,
 		.uart_pin_tx = 0,
 		.uart_pin_rx = 1,
 		.pin_pwr = 14
 	};
 
+	//sim7080g_init(sim);
+
 	printf("starting sim7080g... ");
+	sim7080g_init(sim);
 	if(!sim7080g_start(sim)) goto ERROR_LOOP;
 	printf("started\n");
+
+	sleep_ms(2000);
+	printf("power off test\n");
+	if(!sim7080g_power_off(sim)) printf("power off error\n");
+
+	sleep_ms(2500);
+	printf("power on test\n");
+	sim7080g_power_on(sim);
+	
 
 	sleep_ms(3000);
 	printf("\nstarting loop\n");
@@ -76,7 +89,7 @@ void main() {
 		}
 	} else printf("failed to read response\n");
 
-	sleep_ms(1000);
+	sleep_ms(2000);
 	}
 	
 
