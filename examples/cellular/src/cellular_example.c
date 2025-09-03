@@ -29,8 +29,6 @@
 #include "whale.h"
 #include "rp2x_sim7080g.h"
 
-
-
 const char sim_apn[] = "iot.1nce.net";
 const char server_url[] = "amelia.wisdomresearch.net";
 const uint port = 8086;
@@ -50,11 +48,19 @@ void main() {
 	};
 
 	static sim7080g_config_t conf = {
-		.apn = sim_apn,
-		.sim_cmee = cmee_numeric,
+		.sim_cmee = cmee_verbose,
 		.sim_cmgf = cmgf_pdu,
 		.sim_cnmp = cnmp_auto,
-		.sim_cmnb = cmnb_catm
+		.sim_cmnb = cmnb_catm,
+		.sim_cfun = cfun_full,
+		.sim_cops_mode = cops_mode_auto,
+		.sim_cgreg = cgreg_disable_unsolicited
+	};
+
+	static sim7080g_pdp_inst_t pdp_inst_1 = {
+		.cid = 1,
+		.pdp_type = "IP",
+		.apn = sim_apn
 	};
 
 	//sim7080g_init(sim);
@@ -65,8 +71,16 @@ void main() {
 	printf("started\n");
 
 	sim7080g_config(sim, conf);
+	sim7080g_pdp_config(sim, pdp_inst_1);
 
-	sleep_ms(2000);
+	sleep_ms(8000);
+
+	printf("activating cell...");
+	sim7080g_cn_activate(sim, 0, 1);
+
+	for(;;);
+
+		
 	printf("power off test\n");
 	if(!sim7080g_power_off(sim)) printf("power off error\n");
 
