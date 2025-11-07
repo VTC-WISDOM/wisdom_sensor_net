@@ -1,0 +1,3 @@
+[[submodules]]
+remote = https://github.com/VTC-WISDOM/wisdom_hal_extender.git
+local = whale
