@@ -4,9 +4,7 @@ test/*/.cache
 */.cache
 *.swp
 *.swo
-pico
 .vscode
-turbidity/build
 **/build
 *.sw?
 whale
