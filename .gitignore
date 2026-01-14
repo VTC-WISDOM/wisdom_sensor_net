@@ -8,3 +8,4 @@ test/*/.cache
 **/build
 *.sw?
 whale
+.directory
