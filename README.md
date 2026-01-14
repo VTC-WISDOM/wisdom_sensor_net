@@ -16,8 +16,14 @@ Here lives all of the test, example, and functional code for the WiSDOM node.
 [picotool](https://github.com/raspberrypi/pico-sdk)
 
 Debian based distributions:
+
+
 ```sudo apt install cmake python3 build-essential gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib```
+
+
 Void linux:
+
+
 ```sudo xbps-install -Su cmake python3 base-devel cross-arm-none-eabi libusb-devel```
 
  - Install dependencies
